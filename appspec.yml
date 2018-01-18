@@ -1,0 +1,22 @@
+version: 0.0
+os: linux
+files:
+  - source:
+    destination: /var/www/html/dogfighter
+hooks:
+  BeforeInstall:
+    - location: bin/clear-packages
+      timeout: 1000
+      runas: ec2-user
+  AfterInstall:
+    - location: bin/install-packages
+      timeout: 1000
+      runas: ec2-user
+  ApplicationStart:
+    - location: bin/app-start
+      timeout: 1000
+      runas: ec2-user
+  ApplicationStop:
+    - location: bin/app-stop
+      timeout: 1000
+      runas: ec2-user
