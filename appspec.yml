@@ -1,7 +1,8 @@
 version: 0.0
 os: linux
 files:
-  - destination: /var/www/html/dogfighter
+  - source: /var/www/html/dogfighter
+    destination: /var/www/html/dogfighter
 hooks:
   BeforeInstall:
     - location: bin/clear-packages
