@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -rf node_modules
+echo "Hello there you!"
