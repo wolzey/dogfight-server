@@ -1,22 +1,22 @@
 version: 0.0
 os: linux
 files:
-  - source: /var/www/html/
+  - source: /
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: bin/clear-packages
+    - location: bin/clear-packages.sh
       timeout: 1000
       runas: root
   AfterInstall:
-    - location: bin/install-packages
+    - location: bin/install-packages.sh
       timeout: 1000
       runas: root
   ApplicationStart:
-    - location: bin/app-start
+    - location: bin/app-start.sh
       timeout: 1000
       runas: root
   ApplicationStop:
-    - location: bin/app-stop
+    - location: bin/app-stop.sh
       timeout: 1000
       runas: root
