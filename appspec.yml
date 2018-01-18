@@ -7,16 +7,16 @@ hooks:
   BeforeInstall:
     - location: bin/clear-packages.sh
       timeout: 1000
-      runas: root
+      runas: ec2-user
   AfterInstall:
     - location: bin/install-packages.sh
       timeout: 1000
-      runas: root
+      runas: ec2-user
   ApplicationStart:
     - location: bin/app-start.sh
       timeout: 1000
-      runas: root
+      runas: ec2-user
   ApplicationStop:
     - location: bin/app-stop.sh
       timeout: 1000
-      runas: root
+      runas: ec2-user
