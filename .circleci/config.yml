@@ -56,7 +56,7 @@ jobs:
             source ~/.bash_profile
             pip install awscli --upgrade --user
             source ~/.bash_profile
-            aws --region us-west-2 s3 sync dist s3://dogfighter-deployments/releases --delete
+            aws --region us-west-2 s3 sync /home/circleci/dogfighter s3://dogfighter-deployments/releases --delete
 
 workflows:
   version: 2
