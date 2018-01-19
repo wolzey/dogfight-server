@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  build-job:
+  build:
     docker:
       - image: my-image
     working_directory: /
@@ -23,7 +23,7 @@ workflows:
   version: 2
   build-deploy:
     jobs:
-      - build-job
+      - build
       - deploy-job:
           requires:
             - build-job
