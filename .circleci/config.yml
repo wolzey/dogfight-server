@@ -25,6 +25,7 @@ jobs:
             echo "export PATH=~/.local/bin:$PATH" >> ~/.bash_profile
             source ~/.bash_profile
             pip install awscli --upgrade --user
+            source ~/.bash_profile
       - run:
           name: Deploy to S3
           command: |
