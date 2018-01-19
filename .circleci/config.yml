@@ -56,7 +56,7 @@ jobs:
             source ~/.bash_profile
             pip install awscli --upgrade --user
             source ~/.bash_profile
-            aws --region us-west-2 s3 sync dist s3://dogfighter-deployments/releases/
+            aws --region us-west-2 s3 sync dist.zip s3://dogfighter-deployments/releases/
 
 workflows:
   version: 2
