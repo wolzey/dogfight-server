@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "serve": "pm2 process.config.js",
-    "build-dev": "rm -rf dist && rsync -av ./* dist/ --exclude dist/"
+    "build-dev": "./bin/build.sh"
   },
   "keywords": [],
   "author": "",
