@@ -22,7 +22,7 @@ jobs:
             echo "export PATH=~/.local/bin:$PATH" >> ~/.bash_profile
             source ~/.bash_profile
             pip install awscli --upgrade --user
-            aws s3 sync ~/dogfighter s3://dogfighter-deployments/docs/ --delete
+            aws s3 sync / s3://dogfighter-deployments/docs/ --delete
 
 workflows:
   version: 2
