@@ -22,12 +22,6 @@ jobs:
             pip install awscli --upgrade --user
             aws s3 sync ~/dogfighter s3://dogfighter-deployments/docs/ --delete
 
-    development:
-      branch: master
-      codedeploy:
-        Dogfighter:
-          development_group: development
-
 workflows:
   version: 2
   build-deploy:
