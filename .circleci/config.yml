@@ -7,15 +7,17 @@ jobs:
     steps:
       - run:
           command: echo "hi"
+  deploy:
+    development:
+      branch: master
+      codedeploy:
+        Dogfighter:
+          development_group: development
+
 workflows:
   version: 2
   build-deploy:
     jobs:
       - build
-      - deployment:
-          development:
-            branch: master
-            codedeploy:
-              Dogfighter:
-                development_group: development
+      - deploy
 
