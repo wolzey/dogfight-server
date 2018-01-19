@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -rf .tmp
-mkdir .tmp
 rm -rf dist
-rsync -av --exclude=".tmp" ./* dist
+mkdir dist
+TARGETDIR='dist';for file in *;do test "$file" != "$TARGETDIR" && cp -r "$file" "$TARGETDIR/";done
