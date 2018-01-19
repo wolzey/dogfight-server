@@ -2,12 +2,12 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:9.3
+      - image: circleci/node:7
     working_directory: /
     steps:
       - run:
-          name: Install and run pm2
-          command: npm install && npm install -g pm2
+        commands:
+          - npm install -g pm2
 
 workflows:
   build-deploy:
