@@ -6,7 +6,7 @@ jobs:
     working_directory: /
     steps:
       - run:
-          command: npm install -g pm2
+          command: echo "hi"
 
 
 workflows:
