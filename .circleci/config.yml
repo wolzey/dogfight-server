@@ -20,10 +20,10 @@ workflows:
   build-deploy:
     jobs:
       - build
-      - deploy-job:
-          requires:
-            - build-job
-          filters:
-            branches:
-              only: master
+      - deployment:
+          development:
+            branch: master
+            codedeploy:
+              Dogfighter:
+                development_group: development
 
