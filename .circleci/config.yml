@@ -3,7 +3,7 @@ jobs:
   build:
     docker:
       - image: circleci/node:7
-    working_directory: ~/dogfighter
+    working_directory: /home/circleci/dogfighter
     steps:
       - checkout
       - run:
@@ -33,7 +33,7 @@ jobs:
           paths:
             - dist
   deploy:
-    working_directory: ~/dogfighter
+    working_directory: /home/circleci/dogfighter
     docker:
       - image: node:6.10
     steps:
