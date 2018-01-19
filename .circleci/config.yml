@@ -5,20 +5,11 @@ jobs:
       - image: circleci/node:9.3
     working_directory: /
     steps:
-      - run: npm install
-
-  deploy-job:
-    working_directory: /
-    steps:
       - run:
-          name: Install some stuff
-          command: npm install
-      - run:
-          name: Deploy if tests pass and branch is Master
-          command: aws s3 sync ec2-user/_site/docs s3://dogfighter-deployments/docs/ --delete
+          name: Install and run pm2
+          command: npm install && npm install -g pm2
 
 workflows:
-  version: 2
   build-deploy:
     jobs:
       - build
