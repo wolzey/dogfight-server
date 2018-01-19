@@ -5,7 +5,7 @@ files:
     destination: /var/www/html/
 hooks:
   BeforeInstall:
-    - location: bin/clear-packages.sh
+    - location: bin/prep-environment.sh
       timeout: 1000
       runas: ec2-user
   AfterInstall:
