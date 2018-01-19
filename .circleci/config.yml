@@ -39,7 +39,7 @@ jobs:
     steps:
       - run:
           name: Show current branch
-          command: echo ${CIRCLE_BRANCH}
+          command: echo ${CIRCLE_BRANCH} && pwd && ls
       # Restore cache from build job
       # dist folder
       - restore_cache:
