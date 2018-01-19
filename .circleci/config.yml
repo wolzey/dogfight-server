@@ -1,18 +1,19 @@
 version: 2
 jobs:
-  build:
-    docker:
-      - image: circleci/node:7
-    working_directory: /
-    steps:
-      - run:
+  - build:
+      docker:
+        - image: circleci/node:7
+      working_directory: /
+      steps:
+        - run:
           command: echo "hi"
-  deploy:
-    development:
-      branch: master
-      codedeploy:
-        Dogfighter:
-          development_group: development
+
+  - deploy:
+      development:
+        branch: master
+        codedeploy:
+          Dogfighter:
+            development_group: development
 
 workflows:
   version: 2
