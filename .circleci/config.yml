@@ -17,8 +17,14 @@ jobs:
       - checkout
       - run:
           name: Install AWS CLI
-          command:
-            apt-get -y -qq install awscli
+          command: |
+            apt-get -y -qq update
+            apt-get -y -qq install python3.4-dev
+            curl -O https://bootstrap.pypa.io/get-pip.py
+            python3.4 get-pip.py --user
+            echo "export PATH=~/.local/bin:$PATH" >> ~/.bash_profile
+            source ~/.bash_profile
+            pip install awscli --upgrade --user
       - run:
           name: Deploy to S3
           command: |
