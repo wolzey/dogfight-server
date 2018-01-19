@@ -4,6 +4,10 @@ files:
   - source: /
     destination: /var/www/html/
 hooks:
+  BeforeInstall:
+    - location: bin/clear-packages.sh
+      timeout: 1000
+      runas: ec2-user
   AfterInstall:
     - location: bin/install-packages.sh
       timeout: 1000
