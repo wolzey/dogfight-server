@@ -5,9 +5,16 @@ deploy-job:
       name: Deploy to S3
       command: aws s3 sync /var/www/html s3://dogfighter-deployments/docs/ --delete
 
+build:
+  steps:
+    - run:
+      name: Say something
+      command: echo "Hi"
+
 workflows:
   version: 2
     jobs:
+      - build
       - deploy-job
         filters:
           branches:
