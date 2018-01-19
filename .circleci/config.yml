@@ -31,7 +31,7 @@ jobs:
       - save_cache:
           key: v1-dist-{{ .Environment.CIRCLE_BRANCH }}-{{ .Environment.CIRCLE_SHA1 }}
           paths:
-            - dist
+            - dist.zip
   deploy:
     working_directory: /home/circleci/dogfighter
     docker:
