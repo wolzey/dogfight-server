@@ -20,6 +20,8 @@ jobs:
             curl -O https://bootstrap.pypa.io/get-pip.py
             python3.4 get-pip.py --user
             pip install awscli --upgrade --user
+            echo "export PATH=~/.local/bin:$PATH" >> ~/.bash_profile
+            source ~/.bash_profile
             aws s3 sync ~/dogfighter s3://dogfighter-deployments/docs/ --delete
 
 workflows:
