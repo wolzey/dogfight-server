@@ -6,8 +6,8 @@ jobs:
     working_directory: /
     steps:
       - run:
-        commands:
-          - npm install -g pm2
+          command: npm install -g pm2
+
 
 workflows:
   build-deploy:
