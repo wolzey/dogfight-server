@@ -1,3 +1,4 @@
+version: 2
 deploy-job:
   working_directory: /
   steps:
@@ -12,10 +13,9 @@ build:
       command: echo "Hi"
 
 workflows:
-  version: 2
-    jobs:
-      - build
-      - deploy-job
-        filters:
-          branches:
-            only: master
+  jobs:
+    - build
+    - deploy-job
+      filters:
+        branches:
+          only: master
