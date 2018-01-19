@@ -26,9 +26,6 @@ jobs:
             source ~/.bash_profile
             pip install awscli --upgrade --user
             source ~/.bash_profile
-      - run:
-          name: Deploy to S3
-          command: |
             aws --region us-west-2 s3 sync ./ s3://dogfighter-deployments/releases --delete
 
 workflows:
