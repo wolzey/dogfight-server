@@ -3,26 +3,26 @@ jobs:
   build:
     docker:
       - image: circleci/node:7
-    working_directory: /
+    working_directory: ~/dogfighter
     steps:
+      - checkout
       - run:
           command: echo "hi"
 
   deploy:
+    working_directory: ~/dogfighter
     docker:
       - image: node:6.10
-    working_directory: ~/dogfighter
     steps:
+      - checkout
       - run:
+          name: Install AWS CLI
+          command:
+            sudo apt-get -y -qq install awscli
+      - run:
+          name: Deploy to S3
           command: |
-            apt-get -y -qq update
-            apt-get -y -qq install python3.4-dev
-            curl -O https://bootstrap.pypa.io/get-pip.py
-            python3.4 get-pip.py --user
-            echo "export PATH=~/.local/bin:$PATH" >> ~/.bash_profile
-            source ~/.bash_profile
-            pip install awscli --upgrade --user
-            aws s3 sync / s3://dogfighter-deployments/docs/ --delete
+            aws --region us-west-2 s3 sync ./ s3://dogfighter-deployments/releases --delete
 
 workflows:
   version: 2
