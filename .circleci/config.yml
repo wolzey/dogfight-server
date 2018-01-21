@@ -7,7 +7,7 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Show current branch
+          name: Show current branches
           command: echo ${CIRCLE_BRANCH}
       - deploy:
           name: Digital Ocean
