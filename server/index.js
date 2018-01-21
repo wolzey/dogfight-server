@@ -22,4 +22,4 @@ app.get('/', (req, res, next) => {
   res.json({ success: true, running: true, message: 'Welcome to dogfighter' })
 })
 
-server.listen(config.port)
+server.listen(config.port, config.ip)

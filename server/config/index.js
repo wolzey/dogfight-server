@@ -8,6 +8,7 @@ const config = {
   },
   [DEV]: {
     port: process.env.PORT || 3000,
+    ip: '10.132.101.193',
     logLevel: 'dev'
   }
 }
