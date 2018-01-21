@@ -5,11 +5,9 @@ const config = {
   [PROD]: {
     port: process.env.PORT,
     logLevel: 'info',
-    ip: '10.132.101.193'
   },
   [DEV]: {
     port: process.env.PORT || 3000,
-    ip: '10.132.101.193',
     logLevel: 'dev'
   }
 }
