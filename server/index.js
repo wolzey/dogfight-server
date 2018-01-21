@@ -17,4 +17,9 @@ require('./config/socket')(io)
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+app.get('/', (req, res, next) => {
+  console.log('Hi')
+  res.json({ success: true, running: true, message: 'Welcome to dogfighter' })
+})
+
 server.listen(config.port)
