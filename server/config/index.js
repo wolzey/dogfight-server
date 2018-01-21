@@ -4,7 +4,8 @@ const DEV  = 'development'
 const config = {
   [PROD]: {
     port: process.env.PORT,
-    logLevel: 'info'
+    logLevel: 'info',
+    ip: '10.132.101.193'
   },
   [DEV]: {
     port: process.env.PORT || 3000,
