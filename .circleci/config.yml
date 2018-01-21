@@ -7,11 +7,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Show current branches
+          name: Show current branch
           command: echo ${CIRCLE_BRANCH}
       - deploy:
           name: Digital Ocean
-          command: ssh root@104.131.171.193 "cd ~/dogfight-server; git pull; npm install; forever stopall; forever start server/index.js"
+          command: ssh -o "StrictHostKeyChecking no" root@104.131.171.193 "cd ~/dogfight-server; git pull; npm install; forever stopall; forever start server/index.js"
 
 workflows:
   version: 2
